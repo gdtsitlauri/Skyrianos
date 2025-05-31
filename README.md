@@ -22,18 +22,6 @@ This is a lightweight, responsive single-page website designed to showcase the u
 
 ---
 
-## 📁 Project Structure
-
-skyrianos/
-├── images/ # Contains images for beaches, sights, food, carnival, etc.
-├── script.js # All interactive JS logic (popups, navigation, etc.)
-├── styles.css # Styling and animations
-├── index.html # Main HTML structure
-├── favicon.png # Site icon
-└── sitemap.xml # For SEO and crawling
-
----
-
 ## 🛠️ Technologies Used
 
 - HTML5
@@ -45,28 +33,16 @@ skyrianos/
 
 ---
 
-## 🚀 Setup & Deployment
-
-### Local Development
-
-```bash
-git clone https://github.com/gdtsitlauri/Skyrianos.git
-cd Skyrianos
-# Open index.html in your browser or use a local live server
-```
-
-### Automatic Deployment
+## 🚀 Setup & Automatic Deployment
 
 This project is automatically deployed via Netlify from the main branch of this repository.
 
-📷 Preview
-
 📬 Contact  
-If you want to contribute or suggest something, feel free to open an issue or contact me.
+If you want to contribute or suggest something, feel free to open an issue.
 
 © License  
-This project is open for personal or educational use. Commercial reuse of content (texts, images) is not allowed without permission.
+This project is open for personal use. Commercial reuse of content (texts, images) is not allowed without permission.
 
-Made with ❤️ for the island of Skyros
+From Skyros with ❤️
 
 ---
