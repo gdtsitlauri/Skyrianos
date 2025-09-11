@@ -85,14 +85,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const beachDesc = document.getElementById('beachDescription');
 
   function updateBeach(index) {
-    beachImg.style.opacity = 0;
-    setTimeout(() => {
-      beachImg.src = beaches[index].img;
-      beachImg.alt = beaches[index].title;
-      beachTitle.textContent = beaches[index].title;
-      beachDesc.textContent = beaches[index].desc;
-      beachImg.style.opacity = 1;
-    }, 300);
+    beachImg.style.opacity = 0; // Κρύψε την εικόνα
+
+    beachImg.onload = function() {
+      beachImg.style.opacity = 1; // Εμφάνισε όταν φορτωθεί η νέα
+    };
+
+    beachImg.src = beaches[index].img;
+    beachImg.alt = beaches[index].title;
+    beachTitle.textContent = beaches[index].title;
+    beachDesc.textContent = beaches[index].desc;
   }
 
   if (openBeaches) {
@@ -188,14 +190,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const title = document.getElementById('sightTitle');
     const desc = document.getElementById('sightDesc');
 
-    // Animation
     image.style.opacity = 0;
-    setTimeout(() => {
-      image.src = sight.image;
-      title.textContent = sight.title;
-      desc.textContent = sight.description;
+    image.onload = function() {
       image.style.opacity = 1;
-    }, 250);
+    };
+    image.src = sight.image;
+    title.textContent = sight.title;
+    desc.textContent = sight.description;
   }
 
   document.getElementById('openSights').addEventListener('click', (e) => {
@@ -272,14 +273,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const img = document.getElementById('foodImage');
     img.style.opacity = 0;
 
-    setTimeout(() => {
-      img.src = foodData[foodIndex].img;
-      img.onload = () => {
-        img.style.opacity = 1;
-      };
-      document.getElementById('foodTitle').textContent = foodData[foodIndex].title;
-      document.getElementById('foodDescription').textContent = foodData[foodIndex].desc;
-    }, 250); // χρόνο fade
+    img.onload = () => {
+      img.style.opacity = 1;
+    };
+    img.src = foodData[foodIndex].img;
+    document.getElementById('foodTitle').textContent = foodData[foodIndex].title;
+    document.getElementById('foodDescription').textContent = foodData[foodIndex].desc;
   }
 
   document.getElementById('nextFood').addEventListener('click', () => {
