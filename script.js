@@ -416,3 +416,36 @@ document.fonts.load('1em "Caveat"').then(function() {
   document.body.style.opacity = '1';
 });
 
+// Preload images
+const preloadImages = [
+  // Beaches
+  'images/beaches/magazia.png',
+  'images/beaches/pefkos.png',
+  'images/beaches/atsitsa.png',
+  'images/beaches/agalipa.png',
+  'images/beaches/kalamitsa.png',
+  // Food
+  'images/food/16.png',
+  'images/food/15.png',
+  'images/beaches/14.png',
+  'images/beaches/12.png',
+  'images/beaches/13.png',
+  // Sights
+  'images/sights/17.png',
+  'images/sights/18.png',
+  'images/sights/19.png',
+  'images/sights/20.png',
+  'images/sights/24.png',
+  'images/sights/25.png',
+  'images/sights/28.png',
+  'images/sights/29.png',
+  // Carnival
+  'images/carnival.png',
+  // Add όποια άλλα images χρειάζεσαι
+];
+
+preloadImages.forEach(src => {
+  const img = new Image();
+  img.src = src;
+});
+
