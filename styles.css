@@ -12,6 +12,8 @@ body {
   overflow-x: hidden;
   animation: fullBreathingWater 10s ease-in-out infinite;
   transform-origin: center center;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 /* === ANIMATIONS === */

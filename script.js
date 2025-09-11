@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // === BEACHES POPUP ===
   const beaches = [
     {
-      title: 'Molos',
-      img: 'images/beaches/molos.png',
+      title: 'Magazia',
+      img: 'images/beaches/magazia.png',
       desc: 'A long, organized beach near the town, perfect for swimming and sunbathing.'
     },
     {
@@ -69,8 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
       desc: 'A hidden gem, with crystal clear water.'
     },
     {
-      title: 'Pefko',
-      img: 'images/beaches/pefko.png',
+      title: 'Pefkos',
+      img: 'images/beaches/pefkos.png',
       desc: 'A secluded beach surrounded nature, perfect for relaxing.'
     }
   ];
@@ -410,3 +410,9 @@ document.addEventListener('mousemove', (e) => {
     }
   });
 });
+
+// Load Google Fonts and then show the content
+document.fonts.load('1em "Caveat"').then(function() {
+  document.body.style.opacity = '1';
+});
+
