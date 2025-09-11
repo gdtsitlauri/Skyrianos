@@ -426,9 +426,9 @@ const preloadImages = [
   // Food
   'images/food/16.png',
   'images/food/15.png',
-  'images/beaches/14.png',
-  'images/beaches/12.png',
-  'images/beaches/13.png',
+  'images/food/14.png',
+  'images/food/12.png',
+  'images/food/13.png',
   // Sights
   'images/sights/17.png',
   'images/sights/18.png',
