@@ -1,3 +1,14 @@
+.popup-content h2,
+.popup-content p,
+.popup-content .popup-text p {
+  transform: none !important;
+}
+.info-box h2, .info-box p {
+  transform: none !important;
+}
+.info-box img {
+  transform: none !important;
+}
 /* === RESET & BODY === */
 * {
   margin: 0;
@@ -51,7 +62,6 @@ body {
 .hero-menu,
 .content-row,
 .hero-img-container,
-.info-box,
 .skyrianos-logo {
   animation: floatSoft 6s ease-in-out infinite;
 }
@@ -186,6 +196,7 @@ body {
   justify-content: center;
   gap: 2rem;
   padding: 2rem 1rem 4rem;
+  perspective: 1200px;
 }
 .info-box {
   width: 100%;
@@ -196,15 +207,82 @@ body {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   text-align: center;
   overflow: hidden;
-  opacity: 0;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  /* opacity: 0; */
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Κάθε info-box με διαφορετικό breathing animation */
+.content-row .info-box:nth-child(1),
+.content-row .info-box:nth-child(3) {
+  animation: swapBreathingA 12s ease-in-out infinite;
+}
+.content-row .info-box:nth-child(2),
+.content-row .info-box:nth-child(4) {
+  animation: swapBreathingB 12s ease-in-out infinite;
+}
+
+@keyframes swapBreathingA {
+  0%   { transform: translateY(-10px); }
+  20%  { transform: translateY(-5px); }
+  50%  { transform: translateY(10px); }
+  80%  { transform: translateY(5px); }
+  100% { transform: translateY(-10px); }
+}
+@keyframes swapBreathingB {
+  0%   { transform: translateY(10px); }
+  20%  { transform: translateY(5px); }
+  50%  { transform: translateY(-10px); }
+  80%  { transform: translateY(-5px); }
+  100% { transform: translateY(10px); }
+}
+
+@keyframes upBreathing {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+@keyframes downBreathing {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(18px); }
+}
+@keyframes scaleBreathing {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+@keyframes rotateBreathing {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(2.5deg); }
+}
+
+@keyframes breathingA {
+  0%, 100% { transform: scale(1) rotate(-0.2deg); }
+  20% { transform: scale(1.012) rotate(0.1deg); }
+  50% { transform: scale(1.018) rotate(-0.1deg); }
+  80% { transform: scale(1.012) rotate(0.2deg); }
+}
+@keyframes breathingB {
+  0%, 100% { transform: scale(1) rotate(0.2deg); }
+  25% { transform: scale(1.01) rotate(-0.1deg); }
+  50% { transform: scale(1.02) rotate(0.15deg); }
+  75% { transform: scale(1.01) rotate(-0.2deg); }
+}
+@keyframes breathingC {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  30% { transform: scale(1.015) rotate(0.2deg); }
+  60% { transform: scale(1.01) rotate(-0.15deg); }
+}
+@keyframes breathingD {
+  0%, 100% { transform: scale(1) rotate(-0.1deg); }
+  20% { transform: scale(1.013) rotate(0.1deg); }
+  55% { transform: scale(1.017) rotate(-0.2deg); }
+  85% { transform: scale(1.013) rotate(0.15deg); }
 }
 .info-box.visible {
   animation: slideInLeft 0.8s ease-out forwards;
 }
 .info-box:hover {
-  transform: translateY(-22px) scale(1.12);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.3);
+  transform: translateY(-32px) scale(1.18) rotateX(18deg);
+  box-shadow: 0 32px 80px 0 rgba(0,0,0,0.36);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 1.2s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .info-box img {
   width: 100%;
@@ -212,6 +290,9 @@ body {
   border-radius: 14px;
   object-fit: cover;
   display: block;
+  transition: none !important;
+  will-change: auto !important;
+  pointer-events: auto;
 }
 .info-box h2 {
   font-size: clamp(1.6rem, 2.2vw, 2rem);
@@ -316,6 +397,10 @@ h2, .popup-content h2, .info-box h2 {
 body * {
   will-change: transform;
   transition: transform 0.25s ease;
+}
+.info-box img {
+  will-change: auto !important;
+  transition: none !important;
 }
 @keyframes fadeInUp {
   from {

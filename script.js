@@ -394,6 +394,8 @@ document.addEventListener('mousemove', (e) => {
   elements.forEach(el => {
     // Skip if element is a popup image
     if (el.classList.contains('popup-img')) return;
+    // Skip if element is inside a popup-content or is popup-content itself
+    if (el.closest('.popup-content')) return;
 
     const rect = el.getBoundingClientRect();
     const offsetX = e.clientX - (rect.left + rect.width / 2);
