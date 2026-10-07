@@ -30,4 +30,4 @@ python -m http.server 8000      # then open http://localhost:8000
 ## Rights
 
 The texts and photos are not licensed for reuse without permission. The site's code was written by
-George David Tsitlauri.
+George David Tsitlauri and is available under the MIT license ([LICENSE](LICENSE)).
